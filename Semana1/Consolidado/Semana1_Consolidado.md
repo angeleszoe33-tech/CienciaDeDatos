@@ -65,6 +65,10 @@ Dada la función **f(x) = 2x + 3**:
 - **Ordenada al origen (b):** 3 → la función corta el eje Y en el punto (0, 3).
 - La función es **creciente** (pendiente positiva).
 
+**Gráfica de la función:**
+
+![Gráfica f(x)=2x+3](desmos-graph.png)
+
 ---
 
 ### Ejercicio 3: Escalas y Volúmenes (Big Data)

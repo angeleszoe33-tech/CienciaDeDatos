@@ -1,0 +1,146 @@
+### Punto 4: Diseño de Colecciones en JSON para MongoDB
+
+```json
+[
+  {
+    "coleccion": "clientes",
+    "descripcion": "Información personal y de contacto de los clientes registrados",
+    "ejemplo_documento": {
+      "_id": "ObjectId('64a1b2c3d4e5f6789012abcd')",
+      "nombre": "Carlos Ramírez",
+      "email": "carlos.ramirez@email.com",
+      "telefono": "+52 442 123 4567",
+      "fecha_registro": "2024-03-15T10:30:00Z",
+      "direcciones": [
+        {
+          "tipo": "envio",
+          "calle": "Av. Constituyentes 500",
+          "colonia": "Constituyentes",
+          "ciudad": "Querétaro",
+          "estado": "Querétaro",
+          "cp": "76150",
+          "es_predeterminada": true
+        }
+      ],
+      "preferencias": {
+        "categorias_favoritas": ["running", "ciclismo"],
+        "talla_ropa": "M",
+        "talla_calzado": 27
+      },
+      "historial_compras": ["ObjectId('...orden1')", "ObjectId('...orden2')"],
+      "activo": true
+    }
+  },
+  {
+    "coleccion": "productos",
+    "descripcion": "Catálogo de artículos deportivos con atributos variables por categoría",
+    "ejemplo_documento": {
+      "_id": "ObjectId('64a1b2c3d4e5f6789012efgh')",
+      "nombre": "Tenis Running Pro X3",
+      "sku": "TEN-RUN-PRO-X3-42",
+      "categoria": "calzado",
+      "subcategoria": "running",
+      "marca": "SportMax",
+      "precio": 1899.00,
+      "precio_descuento": 1599.00,
+      "moneda": "MXN",
+      "stock": 45,
+      "descripcion": "Tenis de alto rendimiento para corredores de largas distancias.",
+      "atributos_especificos": {
+        "talla": 42,
+        "color": "azul/blanco",
+        "material_suela": "goma de alto rendimiento",
+        "drop_mm": 8,
+        "peso_gr": 280,
+        "tipo_pisada": "neutra"
+      },
+      "imagenes": [
+        "https://cdn.deportivamx.mx/prod/ten-run-pro-x3-1.jpg",
+        "https://cdn.deportivamx.mx/prod/ten-run-pro-x3-2.jpg"
+      ],
+      "calificacion_promedio": 4.7,
+      "total_resenas": 128,
+      "fecha_alta": "2024-01-10T00:00:00Z",
+      "activo": true
+    }
+  },
+  {
+    "coleccion": "ordenes",
+    "descripcion": "Registro de todas las ventas realizadas en la plataforma",
+    "ejemplo_documento": {
+      "_id": "ObjectId('64a1b2c3d4e5f6789012ijkl')",
+      "numero_orden": "ORD-2024-00842",
+      "cliente_id": "ObjectId('64a1b2c3d4e5f6789012abcd')",
+      "fecha_orden": "2024-03-19T14:22:00Z",
+      "estado": "enviado",
+      "productos": [
+        {
+          "producto_id": "ObjectId('64a1b2c3d4e5f6789012efgh')",
+          "nombre": "Tenis Running Pro X3",
+          "sku": "TEN-RUN-PRO-X3-42",
+          "cantidad": 1,
+          "precio_unitario": 1599.00,
+          "subtotal": 1599.00
+        },
+        {
+          "producto_id": "ObjectId('...')",
+          "nombre": "Calcetines Técnicos Running (par)",
+          "sku": "CAL-TEC-RUN-M",
+          "cantidad": 2,
+          "precio_unitario": 149.00,
+          "subtotal": 298.00
+        }
+      ],
+      "resumen_precio": {
+        "subtotal": 1897.00,
+        "descuento_aplicado": 0.00,
+        "costo_envio": 99.00,
+        "impuestos": 318.72,
+        "total": 2314.72,
+        "moneda": "MXN"
+      },
+      "metodo_pago": {
+        "tipo": "tarjeta_credito",
+        "ultimos_digitos": "4521",
+        "banco": "BBVA"
+      },
+      "direccion_envio": {
+        "calle": "Av. Constituyentes 500",
+        "colonia": "Constituyentes",
+        "ciudad": "Querétaro",
+        "estado": "Querétaro",
+        "cp": "76150"
+      },
+      "seguimiento": {
+        "numero_guia": "ESTAFETA-98765432",
+        "paqueteria": "Estafeta",
+        "fecha_estimada_entrega": "2024-03-22",
+        "historial_estatus": [
+          { "estatus": "confirmado", "fecha": "2024-03-19T14:25:00Z" },
+          { "estatus": "preparando", "fecha": "2024-03-19T16:00:00Z" },
+          { "estatus": "enviado", "fecha": "2024-03-20T09:15:00Z" }
+        ]
+      }
+    }
+  },
+  {
+    "coleccion": "resenas",
+    "descripcion": "Opiniones y calificaciones de clientes sobre productos comprados",
+    "ejemplo_documento": {
+      "_id": "ObjectId('64a1b2c3d4e5f6789012mnop')",
+      "producto_id": "ObjectId('64a1b2c3d4e5f6789012efgh')",
+      "cliente_id": "ObjectId('64a1b2c3d4e5f6789012abcd')",
+      "orden_id": "ObjectId('64a1b2c3d4e5f6789012ijkl')",
+      "calificacion": 5,
+      "titulo": "Excelentes para correr largas distancias",
+      "comentario": "Los usé en mi primer medio maratón y el soporte fue increíble. La suela agarra perfecto en asfalto. Totalmente recomendados.",
+      "ventajas": ["comodidad", "durabilidad", "soporte"],
+      "desventajas": [],
+      "verificado_compra": true,
+      "fecha_resena": "2024-03-25T18:45:00Z",
+      "votos_utiles": 23,
+      "imagenes_adjuntas": []
+    }
+  }
+]
+```

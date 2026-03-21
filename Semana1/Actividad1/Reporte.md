@@ -67,7 +67,7 @@ Dada la función **f(x) = 2x + 3**:
 
 **Gráfica de la función:**
 
-![Gráfica f(x)=2x+3](grafica_funcion.png)
+![Gráfica f(x)=2x+3](../Consolidado/grafica_funcion.png)
 
 ---
 

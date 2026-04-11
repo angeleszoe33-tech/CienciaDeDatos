@@ -1,6 +1,6 @@
 # Semana 3: Python y Análisis Exploratorio de Datos
 
-**Fecha:** 02/04/2025
+**Fecha:** 10/04/2025
 **Curso:** QR.LSTI2309TEO — Universidad Tecmilenio
 **Temas cubiertos:** T6 (Python para Ciencia de Datos), T7 (El Proceso de Ciencia de Datos), T8 (Análisis Exploratorio de Datos en Python)
 
